@@ -60,7 +60,7 @@ def sendPassEmailView(request, rowid):
             return HttpResponseRedirect('/mailsent/')
     else:
         row = passDb.objects.get(pk=int(rowid))
-        row.password = passEncr('decrypt', row.password)
+        #row.password = passEncr('decrypt', row.password)
         form = ContactPassForm(instance=row)
         
         
